@@ -38,7 +38,7 @@ public class TopKFrequentElements347 {
             list.add(p.first);
         }
         System.out.println(list.reversed());
-        int [] ans = list.reversed().stream().mapToInt(Integer::intValue).toArray();
+        int [] ans = list.reversed().stream().mapToInt(Integer::intValue).toArray(); 
     }
 }
 
