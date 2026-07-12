@@ -1,33 +1,39 @@
 package com.example.dsa.slidingWindow;
 
-import java.util.HashSet;
-import java.util.LinkedHashSet;
+import java.util.Arrays;
 
 public class PermutationInString567 {
     public static void main(String[] args) {
 //        String s1 = "ab", s2 = "eidbaooo";
         String s1 = "hello", s2 = "ooolleoooleh";
-        HashSet<Character> hs = new LinkedHashSet<>();
+        int[] arr1 = new int[26];
+        int[] arr2 = new int[26];
+        for (int i = 0; i < 26; i++) {
+            arr1[i] = 0;
+            arr2[i] = 0;
 
-        for (int i = 0; i < s1.length(); i++)
-            hs.add(s1.charAt(i));
-        System.out.println(hs);
-        boolean flag = false;
-        for (int i = 0; i < s2.length(); i++) {
-            if (hs.contains(s2.charAt(i))) {
-                for (int j = i; j <= i + s1.length() - 1; j++) {
-                    if (!hs.contains(s2.charAt(j))) {
-                        {
-                            flag = false;
-                            break;
-                        }
-                    } else flag = true;
-                }
-                if (flag) {
-                    System.out.println(true);
-                }
+        }
+        int left = 0;
+        int right = s1.length();
+        for (int i = 0; i < s1.length(); i++) {
+            arr2[s2.charAt(i) - 'a']++;
+            arr1[s1.charAt(i) - 'a']++;
+
+        }
+        if (Arrays.equals(arr1, arr2)) {
+            System.out.println(true);
+            return;
+        }
+        while (right <= s2.length() - 1) {
+            arr2[s2.charAt(left) - 'a']--;
+            left++;
+            arr2[s2.charAt(right) - 'a']++;
+            right++;
+            if (Arrays.equals(arr1, arr2)) {
+                System.out.println(true);
+                return;
             }
         }
-        System.out.println(flag);
+        System.out.println(false);
     }
 }
