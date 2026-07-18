@@ -4,32 +4,32 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class GenerateParantheses22 {
-    String fun(int n, int o, int c, String ans) {
-        System.out.println(n + " " + o + " " + c);
-        System.out.println(ans);
-
-        if (o == 0 && c == 0)
-            return ans;
-
-        if (o < n && c >= o) {
-            ans.concat("(");
-            fun(n, --o, c, ans);
-        } else {
-            ans.concat(")");
-            fun(n, o, --c, ans);
+    void fun(int n, int o, int c, String singleVal, List<String> list) {
+        if (singleVal.length() == 2 * n) {
+            System.out.println("Found: " + singleVal);
+            list.add(singleVal);
+            return;
         }
-        return ans;
+
+        if (o < n) {
+            System.out.println("Add ( -> " + singleVal);
+            fun(n, o + 1, c, singleVal + "(", list);
+        }
+        if (c < o) {
+            System.out.println("Add ) -> " + singleVal);
+            fun(n, o, c + 1, singleVal + ")", list);
+        }
     }
 
     public static void main(String[] args) {
         int n = 3;
         GenerateParantheses22 obj = new GenerateParantheses22();
         List<String> list = new ArrayList<>();
-        int o = 3, c = 3;
-        String ans = "";
+//        List<Character> singleVal = new ArrayList<>();
+        String singleVal = "";
 
-        System.out.println(obj.fun(n, o, c, ans));
-
+        obj.fun(n, 0, 0, singleVal, list);
+        System.out.println(list);
 
     }
 }
