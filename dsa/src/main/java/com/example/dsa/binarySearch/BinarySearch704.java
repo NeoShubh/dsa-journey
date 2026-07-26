@@ -1,8 +1,11 @@
 package com.example.dsa.binarySearch;
 
+import java.util.Arrays;
+
 public class BinarySearch704 {
     public static void main(String [] args){
         int [] nums = {-1,0,3,5,9,12};
+        Arrays.stream(nums).min().getAsInt();
         int target =2;
 
         int left = 0;
