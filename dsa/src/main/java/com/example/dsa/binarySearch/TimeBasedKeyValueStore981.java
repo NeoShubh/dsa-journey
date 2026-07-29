@@ -78,13 +78,16 @@ class TimeMap {
             return hm.get(key).get(right).getValue();
         }
 
+
     }
+
 }
 
 
 public class TimeBasedKeyValueStore981 {
     public static void main(String[] args) {
         TimeMap timeMap = new TimeMap();
+        System.out.println(6);
         timeMap.set("foo", "bar", 1);  // store the key "foo" and value "bar" along with timestamp = 1.
         timeMap.get("foo", 1);         // return "bar"
         timeMap.get("foo", 3);         // return "bar", since there is no value corresponding to foo at timestamp 3 and timestamp 2, then the only value is at timestamp 1 is "bar".
