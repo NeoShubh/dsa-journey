@@ -13,8 +13,6 @@ public class LinkedListCycle141 {
 //                return true;
         }
 //        return false;
-        System.out.println("false");
-
 
     }
 
