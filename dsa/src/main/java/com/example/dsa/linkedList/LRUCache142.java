@@ -1,5 +1,6 @@
 package com.example.dsa.linkedList;
 
+import java.util.ArrayList;
 import java.util.PriorityQueue;
 
 public class LRUCache142 {
@@ -28,6 +29,10 @@ public class LRUCache142 {
 
     public static void main(String[] args) {
         LRUCache142 obj = new LRUCache142(4);
+        ArrayList<Integer> list = new ArrayList<>();
+        list.add(2);list.add(2);list.add(2);list.add(2);list.add(2);list.add(2);
+        int [] arr = list.stream().mapToInt(Integer::intValue).toArray();
+//        arr.le
         obj.put(1, 11);
         obj.put(4, 44);
         obj.put(3, 33);
