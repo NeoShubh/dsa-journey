@@ -1,5 +1,7 @@
 package com.example.dsa.contests.contest516;
 
+import java.util.ArrayList;
+
 public class ProblemOne {
     public static void main(String[] args) {
         String s = "ff";
@@ -27,6 +29,9 @@ public class ProblemOne {
             i++;
             j--;
         }
+      ArrayList<Integer> list = new ArrayList<>();
+      list.add(1); list.add(1); list.add(1);
+      System.out.println( list.get(1));
         return true;
     }
 }

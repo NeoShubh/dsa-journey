@@ -20,7 +20,7 @@ public class LRUCache142 {
         Pair p = new Pair(key, value);
         q.offer(p);
         if (q.size() > capacity)
-            q.poll();
+          q.poll();
     }
 
     public void print() {
