@@ -32,13 +32,13 @@ class MedianFinder {
 
     public double findMedian() {
 
-     if(Math.abs(smallHeap.size() - largeHeap.size())==0){
-        return  (smallHeap.peek()+ largeHeap.peek())/2;
-     }else{
-         if(smallHeap.size()> largeHeap.size()){
-             return smallHeap.peek();
-         }else return largeHeap.peek();
-     }
+        if (Math.abs(smallHeap.size() - largeHeap.size()) == 0) {
+            return (smallHeap.peek() + largeHeap.peek()) / 2;
+        } else {
+            if (smallHeap.size() > largeHeap.size()) {
+                return smallHeap.peek();
+            } else return largeHeap.peek();
+        }
 
     }
 
