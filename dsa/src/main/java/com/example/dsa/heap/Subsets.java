@@ -28,7 +28,7 @@ class Subsets {
     public static void main(String [] args){
         Subsets obj = new Subsets();
 
-        List<List<Integer>> ans = obj.subsets(new int[]{1, 2});
+        List<List<Integer>> ans = obj.subsets(new int[]{1, 2,3});
         System.out.println(ans);
     }
 }
