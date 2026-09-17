@@ -1,4 +1,4 @@
-package com.example.dsa.heap;
+package com.example.dsa.backtracking;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -14,17 +14,22 @@ public class PalindromePartitioning {
     }
 
     void dfs(int index, List<String> partition, List<List<String>> ans, String s) {
+        System.out.println("index is "+index);
         if (index == s.length() ) {
+            System.out.println("we got it");
             ans.add(new ArrayList<>(partition));
             return;
         }
 
         for(int j=index;j<s.length();j++){
+            System.out.println(index+" - "+j);
             String substring = s.substring(index, j + 1);
+            System.out.println(substring);
             if(isPalindrome(substring)){
                 partition.add(substring);
                 dfs(j+1, partition, ans, s);
-                partition.removeLast();
+//                System.out.println();
+                System.out.println("what we remove is "+ partition.removeLast());
             }
         }
 
@@ -44,7 +49,7 @@ public class PalindromePartitioning {
 
     public static void main(String[] args) {
         PalindromePartitioning p = new PalindromePartitioning();
-        List<List<String>> ans = p.partition("abcaa");
+        List<List<String>> ans = p.partition("aab");
         System.out.println(ans);
     }
 }

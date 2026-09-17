@@ -1,4 +1,4 @@
-package com.example.dsa.heap;
+package com.example.dsa.backtracking;
 
 import java.util.ArrayList;
 import java.util.Arrays;
