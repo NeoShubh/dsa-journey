@@ -29,21 +29,27 @@ public class LadderLength127 {
             }
         }
 
-        System.out.println(mp);
+        // System.out.println(mp);
         HashSet<String> visits = new HashSet<>();
+        visits.add(beginWord);
         int result = 1;
         Deque<String> dq = new ArrayDeque<>();
         dq.offer(beginWord);
         while (!dq.isEmpty()) {
-            for (int k = 0; k < dq.size(); k++) {
+            int size = dq.size();
+            for (int k = 0; k < size; k++) {
                 String w = dq.pollFirst();
-                System.out.println(w);
-                System.out.println(visits);
-                if (Objects.equals(w, endWord)) return result;
+                // System.out.println(w);
+                // System.out.println(visits);
+                if (Objects.equals(w, endWord))
+                    return result;
                 for (int i = 0; i < w.length(); i++) {
                     String str = w.substring(0, i) + "*" + w.substring(i + 1, w.length());
                     for (String s : mp.get(str)) {
                         if (!visits.contains(s)) {
+                            if (s.equals(endWord))
+                                return result + 1;
+
                             visits.add(s);
                             dq.add(s);
                         }
@@ -53,7 +59,7 @@ public class LadderLength127 {
             result++;
         }
 
-        return result;
+        return 0;
     }
 
     public static void main(String[] args) {
