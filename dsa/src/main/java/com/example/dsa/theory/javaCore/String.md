@@ -28,6 +28,24 @@ Both variables point to **different objects** in Heap Memory.
 
 ---
 
+
+String s1 = "Shubham";
+String s2 = "Shubham";
+
+String s3 = new String("Shubham");
+String s4 = new String("Shubham");
+
+System.out.println(s1==s2);
+System.out.println(s1.equals(s2));
+System.out.println(s3==s4);
+System.out.println(s3.equals(s4));
+
+true
+true
+false
+true
+
+
 # `==` vs `equals()`
 
 ## `==`
