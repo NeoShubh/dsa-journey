@@ -4,7 +4,7 @@ import java.util.Arrays;
 import java.util.stream.IntStream;
 
 public class BurstBaloons {
-    public int maxCoins(int[] nums) {
+
         public int maxCoins(int[] nums) {
             int n = nums.length;
             int[] arr = new int[n + 2];
@@ -24,7 +24,7 @@ public class BurstBaloons {
             }
             return dp[0][n + 1];
         }
-    }
+    
 
     public static void main(String[] args) {
         int[] arr = {3, 1, 5, 8};
