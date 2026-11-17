@@ -8,7 +8,7 @@ public class MaximumSubarray {
         int sum = 0;
         int maxiMum = Integer.MIN_VALUE;
         while (i <= j && j < arr.length) {
-           
+
             if (sum < 0) {
 
                 sum = arr[j];
